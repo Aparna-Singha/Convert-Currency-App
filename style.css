@@ -13,20 +13,30 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: rgb(10, 28, 37);
+    background: linear-gradient(270deg, rgb(10, 28, 37), rgb(44, 87, 118));
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite; /* Adjusted duration for smoother transitions */
     color: #fff;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 50% 50%; }
+    50% { background-position: 100% 50%; }
+    75% { background-position: 50% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .wrapper {
     width: 400px;
     padding: 40px;
     border-radius: 15px;
-    background: #fefefe;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background:linear-gradient(270deg, rgb(210, 230, 239), rgb(97, 175, 230));;
+    box-shadow: 0 10px 20px rgba(243, 238, 238, 0.2);
 }
 
 .wrapper header {
-    font-size: 20px;/*32*/
+    font-size: 20px; /*32*/
     font-weight: 700;
     text-align: center;
     color: #2b5876;
@@ -71,10 +81,6 @@ form .drop-list {
     justify-content: space-between;
     margin-top: 25px;
 }
-/*select {
-    max-height: 150px;  Set a maximum height 
-    /*overflow-y: auto; Enable vertical scrolling if content overflows 
-}*/
 
 .drop-list .select-box {
     display: flex;
@@ -96,20 +102,19 @@ form .drop-list {
     outline: none;
     cursor: pointer;
 }
-.select-box select::-webkit-scrollbar{
-    width :8px;
+.select-box select::-webkit-scrollbar {
+    width: 8px;
 }
-.select-box select::-webkit-scrollbar-track{
+.select-box select::-webkit-scrollbar-track {
     background: #fff;
 }
-.select-box select::-webkit-scrollbar-thumb{
+.select-box select::-webkit-scrollbar-thumb {
     background: #5f5e5e;
     border-radius: 8px;
     border-right: 2px solid #fff;
 }
 .select-box img {
     max-width: 20px;
-    /*border-radius: 50%;*/
 }
 
 .drop-list .icon {
@@ -128,9 +133,8 @@ form .exchange-rate {
     font-weight: 500;
     margin: 25px 0;
     text-align: center;
-    color: #4e4376;
+    color: #2b5876;
 }
-
 form button {
     height: 55px;
     background: rgb(10, 28, 37);
@@ -148,6 +152,7 @@ form button:hover {
     color: rgb(10, 28, 37);
     transform: scale(1.05);
 }
+
 /* MEDIA QUERIES FOR RESPONSIVENESS */
 
 /* For screens smaller than 768px (tablets) */

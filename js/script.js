@@ -1,7 +1,6 @@
 const dropList = document.querySelectorAll('.drop-list select');
 const fromCurrency = document.querySelector('.from select');
 const toCurrency = document.querySelector('.to select');
-
 const getButton = document.querySelector('form button')
 for(let i =0;i<dropList.length;i++){
     for(currency_code in country_code){
@@ -55,17 +54,16 @@ function getExchangeRate(){
         amount.value = 1;
         amountVal = 1;
     }
-    exchangeRateTxt.innerText="Processing ...";
+    exchangeRateTxt.innerText="Loading...";
     let url = 'https://v6.exchangerate-api.com/v6/89e292d390e513d2b7001995/latest/USD';
     fetch(url).then(response => response.json()).then(result =>{
-        let exchangeRate = result.conversion_rates[toCurrency.value];
-        let totalExchangeRate = (amountVal*exchangeRate).toFixed(2);
-        exchangeRateTxt.innerText = `${amountVal} ${fromCurrency.value} = ${totalExchangeRate} ${toCurrency.value}`;
-
-
-    }).catch(function(){
-        exchangeRateTxt.innerText="Something went wrong"
-    })
-
-
+        let fromRate = result.conversion_rates[fromCurrency.value];
+        let toRate = result.conversion_rates[toCurrency.value];
+        let exchangeRate = toRate / fromRate; 
+let totalExchangeRate = (amountVal * exchangeRate).toFixed(5);
+exchangeRateTxt.innerText = `${amountVal} ${fromCurrency.value} = ${totalExchangeRate} ${toCurrency.value}`;
+}).catch(function(error){
+    console.error('Error fetching exchange rate:', error);
+    exchangeRateTxt.innerText="Failed to fetch exchange rate"
+})
 }
