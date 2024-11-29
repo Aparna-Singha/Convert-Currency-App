@@ -94,7 +94,7 @@ This project is licensed under the MIT License.
 📧 Contact
 
 If you have any questions or suggestions, feel free to reach out:
-	•	Author: Your Name
-	•	Email: yourname@example.com
+	•	Author: Aparna Singha
+	•	Email: aparnasingha3003@gmail.com
 
 Let’s make currency conversion easy and accessible for everyone! 🎉<img width="1440" alt="Screenshot 2024-11-29 at 1 51 12 PM" src="https://github.com/user-attachments/assets/9d3d447a-a1d2-49a5-af66-99d02986a2cf">
